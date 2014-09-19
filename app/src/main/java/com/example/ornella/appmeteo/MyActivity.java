@@ -93,7 +93,6 @@ public class MyActivity extends Activity {
         obj.fetchJSON();
 
         while(obj.parsingComplete);
-
         temperatura.setText(obj.getTemperatura() + " C°");
         localita.setText(url + ", " + obj.getDate());
         imageUrl = (obj.getWeatherIconUrl());

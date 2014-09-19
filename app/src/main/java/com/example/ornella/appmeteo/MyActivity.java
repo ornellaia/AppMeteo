@@ -29,8 +29,6 @@ public class MyActivity extends Activity {
     private String url;
     private HandleJSON obj;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +46,6 @@ public class MyActivity extends Activity {
         getMenuInflater().inflate(R.menu.my, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

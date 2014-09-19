@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppMeteo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="localita">localita</string>
+    <string name="temperatura">temperatura</string>
+    <string name="info">info</string>
+    <string name="configurazione">configurazione</string>
+    <string name="aggiorna">aggiorna</string>
+    <string name="image_about">image_info</string>
+    <string name="info_text">App Developed by\nD-Mobile Lab</string>
+    <string name="data">data</string>
+    <string name="Firenze">Firenze</string>
+    <string name="button">New Button</string>
+
+</resources>

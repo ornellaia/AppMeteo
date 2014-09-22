@@ -1,6 +1,9 @@
 package com.example.ornella.appmeteo;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -28,6 +31,7 @@ public class MyActivity extends Activity {
     private String imageUrl;
     private String url;
     private HandleJSON obj;
+    private Database databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +39,44 @@ public class MyActivity extends Activity {
 
         setContentView(R.layout.activity_my);
 
+       databaseHelper = new Database(this);
+
         localita = (TextView) findViewById(R.id.location);
         temperatura = (TextView) findViewById(R.id.temperature);
-        open(localita);
+        open(localita, databaseHelper);
+
+
+        SQLiteDatabase db1 = databaseHelper.getReadableDatabase();
+
+        //Cursor c = databaseHelper.getLocation();
+        //final String sql = "SELECT COUNT(*) FROM statistiche";
+        //Cursor c = db1.rawQuery(sql, null);
+
+        //if(c.moveToFirst()) {
+
+        //    Log.d("numero righe", c.getString(0));
+
+        //}
+
+        Cursor c1 = databaseHelper.getLocation();
+
+        try
+
+        {
+
+
+            while (c1.moveToNext())
+            {
+
+               Log.d("statistiche", c1.getLong(0) + " " + c1.getString(1) + " " + c1.getString(2) + " " + c1.getString(3) );
+            }
+        }
+
+        finally
+
+        {
+            c1.close();
+        }
     }
 
     @Override
@@ -57,7 +96,7 @@ public class MyActivity extends Activity {
             String aggiorna = localita.getText().toString();
             aggiorna = aggiorna.replaceAll(" ", " ");
             localita.setText(aggiorna);
-            open(localita);
+            open(localita, databaseHelper);
             return true;
 
         } else if (id == R.id.configurazione) {
@@ -75,7 +114,7 @@ public class MyActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void open(View view) {
+    public void open(View view, Database databaseHelper) {
 
         url = "Florence";
         Intent intent = getIntent();
@@ -99,6 +138,10 @@ public class MyActivity extends Activity {
         WebImageView webImage1 = (WebImageView) findViewById(R.id.immagine_meteo);
         webImage1.setUrl(imageUrl);
 
+        //Database databaseHelper = new Database(this);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+
+        databaseHelper.insertMeteo( db, url, obj.getDate(),  obj.getTemperatura() + " C°");
 
     }
 

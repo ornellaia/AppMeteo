@@ -34,7 +34,6 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-
      public void insertMeteo(SQLiteDatabase db, String location, String date, String temperature) {
 
         ContentValues v = new ContentValues();

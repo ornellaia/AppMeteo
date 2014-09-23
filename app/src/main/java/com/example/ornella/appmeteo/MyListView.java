@@ -51,8 +51,6 @@ public class MyListView extends Activity {
           MyListView.this.startActivity(nuovaPagina);
 
           nuovaPagina.putExtra("dato1", titoloriga);
-
-
             }
 
 

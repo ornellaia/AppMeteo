@@ -27,17 +27,13 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        /*
-         * Stringa contenente la sintassi SQL per la
-         * creazione della tabella RUBRICA
-         */
+
         String sql = "CREATE TABLE statistiche";
         sql += "(_id INTEGER PRIMARY KEY,";
         sql += "location TEXT NOT NULL,";
         sql += "date TEXT,";
         sql += "temperature TEXT);";
 
-        //Eseguiamo la query
         db.execSQL(sql);
 
     }
@@ -58,7 +54,8 @@ public class Database extends SQLiteOpenHelper {
         return (getReadableDatabase().query(
                 TemperaturaTable.TABLE_NAME,
                 TemperaturaTable.COLUMNS,
-                "length(" + TemperaturaTable.LOCATION + ") > 0",
+                null,
+
                 //"(" + TemperaturaTable.LOCATION + ")",
                 null,
                 null,

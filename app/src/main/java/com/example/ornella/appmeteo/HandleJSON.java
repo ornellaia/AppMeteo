@@ -56,7 +56,6 @@ public class HandleJSON {
         } catch (Exception e) {
            e.printStackTrace();
         }
-
    }
    public void fetchJSON(){
 

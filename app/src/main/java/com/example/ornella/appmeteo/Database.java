@@ -15,15 +15,13 @@ import java.text.MessageFormat;
 public class Database extends SQLiteOpenHelper {
 
 
-   private static final String DATABASE_NAME = "statistiche.db";
+    private static final String DATABASE_NAME = "statistiche.db";
 
     private static final int SCHEMA_VERSION = 1;
 
     public Database(Context context) {
         super(context, DATABASE_NAME, null, SCHEMA_VERSION);
     }
-
-
 
     @Override
     public void onCreate(SQLiteDatabase db) {

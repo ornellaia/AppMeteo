@@ -1,7 +1,5 @@
 package com.example.ornella.appmeteo;
 
-
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -53,8 +51,6 @@ public class Database extends SQLiteOpenHelper {
                 TemperaturaTable.TABLE_NAME,
                 TemperaturaTable.COLUMNS,
                 null,
-
-                //"(" + TemperaturaTable.LOCATION + ")",
                 null,
                 null,
                 null,

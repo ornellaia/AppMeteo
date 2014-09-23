@@ -23,7 +23,6 @@ public class MyListView extends Activity {
         setContentView(R.layout.activity_list);
         localita = (TextView) findViewById(R.id.location);
 
-        //String[] nameproducts = new String[]{"Florence", "Milan", "Turin", "Rome", "Bologne"};
         String[] nameproducts = new String[]{"Florence", "NewYork", "Melbourne", "Tokyo", "Johannesburg"};
 
         final ArrayList<String> listp = new ArrayList<String>();

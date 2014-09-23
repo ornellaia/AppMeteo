@@ -39,32 +39,17 @@ public class MyActivity extends Activity {
 
         setContentView(R.layout.activity_my);
 
-       databaseHelper = new Database(this);
+        databaseHelper = new Database(this);
 
         localita = (TextView) findViewById(R.id.location);
         temperatura = (TextView) findViewById(R.id.temperature);
         open(localita, databaseHelper);
-
-
-        SQLiteDatabase db1 = databaseHelper.getReadableDatabase();
-
-        //Cursor c = databaseHelper.getLocation();
-        //final String sql = "SELECT COUNT(*) FROM statistiche";
-        //Cursor c = db1.rawQuery(sql, null);
-
-        //if(c.moveToFirst()) {
-
-        //    Log.d("numero righe", c.getString(0));
-
-        //}
 
         Cursor c1 = databaseHelper.getLocation();
 
         try
 
         {
-
-
             while (c1.moveToNext())
             {
 
